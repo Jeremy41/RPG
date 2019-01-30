@@ -7,10 +7,12 @@ public abstract class Personnage
 	protected int force;
 	protected int agilite;
 	protected int intelligence;
+	protected String nom;
 	
    
-	public Personnage()
+	public Personnage(String pNom)
 	{
+		nom = pNom;
 		niveau = 0;
 		vie = 0;
 		force = 0;
@@ -23,12 +25,9 @@ public abstract class Personnage
 	////////METHODE/////////
 	////////////////////////
 	
-	private boolean CheckValue(int pNiveau)
-	{
-		if (pNiveau > 100 || pNiveau < 0) return false;
-		return true;
-	}
-	
+	abstract public void attaqueBasique(Personnage personnage);
+	abstract public void attaqueSpeciale(Personnage personnage);
+	abstract public void attaqueSpeciale();
 	
 	/////////////////////////
 	//SETTER/
@@ -60,9 +59,16 @@ public abstract class Personnage
 		return niveau;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+	
+	public int getVie() {
+		return vie;
+	}
 	
 	public String toString() {
-		return "Woarg je suis le "+this.getClass().getSimpleName()+"de niveau"+this.niveau+"je posséde "+this.vie+" de vitalite " + this.force+" de force "+
+		return "Woarg je suis le "+this.getClass().getSimpleName()+" "+ this.nom +" de niveau "+this.niveau+" je posséde "+this.vie+" de vitalite " + this.force+" de force "+
 				this.agilite+ " d'agilite "+ this.intelligence + " d'inteligence";
 	}
 	

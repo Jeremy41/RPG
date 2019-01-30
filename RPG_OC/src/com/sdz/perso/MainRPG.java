@@ -12,17 +12,19 @@ public class MainRPG {
 	public static void main(String[] args) 
 	{
 		Personnage personnage1 = null;
-		personnage1 = initialisation(personnage1);
+		personnage1 = initialisation(personnage1, "joueur 1");
 		System.out.println(personnage1);
 		Personnage personnage2 = null;
-		personnage2 = initialisation(personnage2);
+		personnage2 = initialisation(personnage2, "joueur 2");
 		System.out.println(personnage2);
+		
+		Combat.lancementCombat(personnage1,personnage2);
 	}
 	
 	
-	public static Personnage initialisation(Personnage personnage)
+	public static Personnage initialisation(Personnage personnage, String pNom)
 	{
-		personnage = initialisationClasse(personnage);
+		personnage = initialisationClasse(personnage, pNom);
 		initialisationNiveau(personnage);
 		initialisationStatistique(personnage);
 		
@@ -30,7 +32,7 @@ public class MainRPG {
 	}
 	
 	
-	public static Personnage initialisationClasse(Personnage personnage)
+	public static Personnage initialisationClasse(Personnage personnage, String pNom)
 	{
 		int typeClasse = 0;
 		int i  = 0;
@@ -44,9 +46,9 @@ public class MainRPG {
 		i = verificationChoix(typeClasse);
 		}
 		
-		if 		(typeClasse == 1)				personnage = new Guerrier();
-		else if (typeClasse == 2)				personnage = new Rodeur();
-		else if	(typeClasse == 3)				personnage = new Mage();
+		if 		(typeClasse == 1)				personnage = new Guerrier(pNom);
+		else if (typeClasse == 2)				personnage = new Rodeur(pNom);
+		else if	(typeClasse == 3)				personnage = new Mage(pNom);
 		
 		return personnage;
 	}

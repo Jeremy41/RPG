@@ -1,21 +1,27 @@
 package com.sdz.perso;
 
-import com.sdz.attaque.Attaque;
-
-public class Mage extends Personnage implements Attaque
+public class Mage extends Personnage
 {
-	public Mage() 
+	public Mage(String pNom) 
 	{
+		super(pNom);
 	}
 
-	@Override
-	public void attaqueBasique() 
+
+	public void attaqueBasique(Personnage personnage) 
 	{
+		personnage.vie -= this.intelligence;
+	}
+
+	public void attaqueSpeciale(Personnage personnage) 
+	{
+		this.vie += this.intelligence*2;
+	}
+
+
+	@Override
+	public void attaqueSpeciale() {
+		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public void attaqueSpeciale() 
-	{
 	}
 }
