@@ -25,9 +25,9 @@ public abstract class Personnage
 	////////METHODE/////////
 	////////////////////////
 	
-	abstract public void attaqueBasique(Personnage personnage);
-	abstract public void attaqueSpeciale(Personnage personnage);
-	abstract public void attaqueSpeciale();
+	public void attaqueBasique(Personnage personnage) {}
+	public void attaqueSpeciale(Personnage personnage) {}
+	public void attaqueSpeciale() {}
 	
 	/////////////////////////
 	//SETTER/

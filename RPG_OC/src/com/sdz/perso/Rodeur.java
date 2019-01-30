@@ -8,19 +8,18 @@ public class Rodeur extends Personnage
 		super(pNom);
 	}
 
-	public void attaqueBasique(Personnage personnage) 
+	public void attaqueBasique(Personnage pPersonnage) 
 	{
-		personnage.vie -= this.agilite;
+		System.out.println(this.getNom()+ " utilise tir a l'arc et inflige "+this.agilite+"dommages");
+		System.out.println(pPersonnage.getNom()+ " perd "+ this.agilite+ " point de vie");
+		pPersonnage.vie -= this.agilite;
 	}
 
-	public void attaqueSpeciale(Personnage personnage) 
+
+	public void attaqueSpeciale() 
 	{
+		System.out.println(this.getNom()+ " lance concentration et augmente son agilite de "+this.niveau/2+".");
 		this.agilite += this.niveau/2;
 	}
-
-	@Override
-	public void attaqueSpeciale() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

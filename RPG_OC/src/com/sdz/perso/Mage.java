@@ -8,20 +8,17 @@ public class Mage extends Personnage
 	}
 
 
-	public void attaqueBasique(Personnage personnage) 
+	public void attaqueBasique(Personnage pPersonnage) 
 	{
-		personnage.vie -= this.intelligence;
+		System.out.println(this.getNom()+ " utilise Boule de Feu et inflige "+this.intelligence+"dommages");
+		System.out.println(pPersonnage.getNom()+ " perd "+ this.intelligence+ " point de vie");
+		pPersonnage.vie -= this.intelligence;
 	}
 
-	public void attaqueSpeciale(Personnage personnage) 
+
+	public void attaqueSpeciale() 
 	{
+		System.out.println(this.getNom()+ " lance Soin et se soigne de "+this.intelligence*2+"."); //mettre en place verif
 		this.vie += this.intelligence*2;
-	}
-
-
-	@Override
-	public void attaqueSpeciale() {
-		// TODO Auto-generated method stub
-		
 	}
 }

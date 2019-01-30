@@ -8,21 +8,19 @@ public class Guerrier extends Personnage
 		super(pNom);
 	}
 
-	public void attaqueBasique(Personnage personnage) 
+	public void attaqueBasique(Personnage pPersonnage) 
 	{
-		
-		personnage.vie -= this.force;
+		System.out.println(this.getNom()+ " utilise coup d'épée et inflige "+this.force+"dommages");
+		System.out.println(pPersonnage.getNom()+ " perd "+ this.force+ " point de vie");
+		pPersonnage.vie -= this.force;
 	}
 
-	public void attaqueSpeciale(Personnage personnage) 
+	public void attaqueSpeciale(Personnage pPersonnage) 
 	{
+		System.out.println(this.getNom()+ " utilise Coup de Rage et inflige "+this.force*2+"dommages");
+		System.out.println(this.getNom()+ " perd " + this.force/2 + " point de vie");
 		this.vie -= this.force/2;
-		personnage.vie -= this.force*2;
+		pPersonnage.vie -= this.force*2;
 	}
 
-	@Override
-	public void attaqueSpeciale() {
-		// TODO Auto-generated method stub
-		
-	}
 }
