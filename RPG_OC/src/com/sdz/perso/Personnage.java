@@ -4,6 +4,7 @@ public abstract class Personnage
 {
 	protected int niveau;
 	protected int vie;
+	protected int vieMax;
 	protected int force;
 	protected int agilite;
 	protected int intelligence;
@@ -15,6 +16,7 @@ public abstract class Personnage
 		nom = pNom;
 		niveau = 0;
 		vie = 0;
+		vieMax = 0;
 		force = 0;
 		agilite = 0;
 		intelligence = 0;
@@ -25,9 +27,8 @@ public abstract class Personnage
 	////////METHODE/////////
 	////////////////////////
 	
-	public void attaqueBasique(Personnage personnage) {}
-	public void attaqueSpeciale(Personnage personnage) {}
-	public void attaqueSpeciale() {}
+	abstract public void attaqueBasique(Personnage personnage);
+	abstract public void attaqueSpeciale(Personnage personnage);
 	
 	/////////////////////////
 	//SETTER/
@@ -41,6 +42,10 @@ public abstract class Personnage
 
 	public void setVie(int vie) {
 		this.vie = vie;
+	}
+	
+	public void setVieMax(int vieMax) {
+		this.vieMax = vieMax;
 	}
 
 	public void setForce(int force) {
@@ -68,11 +73,7 @@ public abstract class Personnage
 	}
 	
 	public String toString() {
-		return "Woarg je suis le "+this.getClass().getSimpleName()+" "+ this.nom +" de niveau "+this.niveau+" je posséde "+this.vie+" de vitalite " + this.force+" de force "+
-				this.agilite+ " d'agilite "+ this.intelligence + " d'inteligence";
-	}
-	
-	
-	
-	
+		return "je suis le "+this.getClass().getSimpleName()+" "+ this.nom +" de niveau "+this.niveau+" je posséde "+this.vieMax+" de vitalite, " + this.force+" de force "+
+				this.agilite+ " d'agilite et "+ this.intelligence + " d'inteligence";
+	}	
 }

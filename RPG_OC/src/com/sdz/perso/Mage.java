@@ -10,15 +10,26 @@ public class Mage extends Personnage
 
 	public void attaqueBasique(Personnage pPersonnage) 
 	{
-		System.out.println(this.getNom()+ " utilise Boule de Feu et inflige "+this.intelligence+"dommages");
+		System.out.println(this.getNom()+ " utilise Boule de Feu et inflige "+this.intelligence+" dommages");
 		System.out.println(pPersonnage.getNom()+ " perd "+ this.intelligence+ " point de vie");
 		pPersonnage.vie -= this.intelligence;
 	}
 
 
-	public void attaqueSpeciale() 
+	public void attaqueSpeciale(Personnage personnage) 
 	{
-		System.out.println(this.getNom()+ " lance Soin et se soigne de "+this.intelligence*2+"."); //mettre en place verif
-		this.vie += this.intelligence*2;
+		int vieRecup = 0;
+		
+		this.vie += vieRecup = this.verifVieMax();
+		System.out.println(this.getNom()+ " lance Soin et se soigne de "+vieRecup+".");
 	}
+	
+	public String toString() {return "Abracadabra "+super.toString();}
+	
+	public int verifVieMax()
+	{
+		if (this.vie + this.intelligence*2 > this.vieMax) return this.vieMax-this.vie;
+		else 											  return this.intelligence*2;
+	}
+	
 }
