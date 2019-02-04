@@ -18,6 +18,7 @@ public class Guerrier extends Personnage
 	public void attaqueSpeciale(Personnage pPersonnage) 
 	{
 		System.out.println(this.getNom()+ " utilise Coup de Rage et inflige "+this.force*2+" dommages.");
+		System.out.println(pPersonnage.getNom()+ " perd "+ this.force*2 + " point de vie");
 		System.out.println(this.getNom()+ " perd " + this.force/2 + " point de vie");
 		this.vie -= this.force/2;
 		pPersonnage.vie -= this.force*2;

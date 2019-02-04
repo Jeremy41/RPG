@@ -4,14 +4,9 @@ package com.sdz.perso;
 /**
  * RPG Bienvenue dans MagiWorld !
  * @author jeremy
- *
+ * @version 1.0
  */
 
-
-// faire javadoc
-// corriger faute de frappe
-// fermer les scanners
-// faire verification choix attaque ( choix 1 ou 2 uniquement)
 
 public class MainRPG {
 

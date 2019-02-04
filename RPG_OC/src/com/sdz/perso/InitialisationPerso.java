@@ -2,9 +2,17 @@ package com.sdz.perso;
 
 import java.util.Scanner;
 
+/**
+ * Initialisation de mon personnage en 3 partie
+ * 1. Attribution d'une specialite (Mage/Guerrier/Rodeur)
+ * 2. Attribution du niveau
+ * 3. Attribution des statistique
+ */
+
+
 public class InitialisationPerso {
 
-	
+
 	public static Personnage initialisation(Personnage personnage, String pNom)
 	{
 		System.out.println("Création du personnage du "+pNom);
@@ -15,6 +23,12 @@ public class InitialisationPerso {
 		return personnage;
 	}
 	
+/**
+ * 1. Attribution d'une specialite (Mage/Guerrier/Rodeur)
+ * 2. @return personnage
+ * Verification saisie avec la methode verificationChoix()
+ */	
+	
 	
 	public static Personnage initialisationClasse(Personnage personnage, String pNom)
 	{
@@ -24,7 +38,7 @@ public class InitialisationPerso {
 		
 		while (verificationChoix(typeClasse))
 		{
-		System.out.println("Veuillez choisir la classe de votre personnage : (1. Guerrier, 2. Rodeur, 3. Mage) ");
+		System.out.println("Veuillez choisir la classe de votre personnage : (1 : Guerrier, 2 : Rodeur, 3 : Mage) ");
 		typeClasse = sc.nextInt();
 		}
 		
@@ -35,6 +49,11 @@ public class InitialisationPerso {
 		return personnage;
 	}
 	
+/**
+ * 2. Attribution du niveau
+ * Verification saisie avec la methode VerificationNiveau()
+ */	
+	
 	
 	public static void initialisationNiveau (Personnage personnage)
 	{
@@ -43,7 +62,7 @@ public class InitialisationPerso {
 		Scanner sc = new Scanner(System.in);
 		while (verificationNiveau(niveau))
 		{
-		System.out.println("Niveau de personnage ?");
+		System.out.println("Niveau du personnage ?");
 		niveau = sc.nextInt();
 		}
 		
@@ -51,6 +70,11 @@ public class InitialisationPerso {
 		personnage.setVieMax(niveau*5);
 		personnage.setVie(niveau*5);
 	}
+	
+/**
+ * 3. Attribution des statistique
+ * Verification saisie avec la methode verificationStatistique()
+ */		
 	
 	
 	public static void initialisationStatistique(Personnage personnage)
@@ -63,16 +87,15 @@ public class InitialisationPerso {
 		{
 		System.out.println("Force du personnage ?");
 		force = sc.nextInt();
-		System.out.println("agilite du personnage ?");
+		System.out.println("Agilité du personnage ?");
 		agilite = sc.nextInt();
-		System.out.println("intelligence du personnage ?");
+		System.out.println("Intelligence du personnage ?");
 		intelligence = sc.nextInt();
 		}
 		
 		personnage.setForce(force);
 		personnage.setAgilite(agilite);
-		personnage.setIntelligence(intelligence);
-		
+		personnage.setIntelligence(intelligence);	
 	}
 		
 	//////////////////////////
@@ -84,7 +107,6 @@ public class InitialisationPerso {
 		if (choix < 1 || choix > 3) return true;
 		return false;
 	}
-	
 	
 	public static boolean verificationStatistique(int total, int niveau)
 	{

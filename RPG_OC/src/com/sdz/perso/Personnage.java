@@ -30,8 +30,13 @@ public abstract class Personnage
 	abstract public void attaqueBasique(Personnage personnage);
 	abstract public void attaqueSpeciale(Personnage personnage);
 	
+	public String toString() {
+		return "je suis le "+this.getClass().getSimpleName()+" "+ this.nom +" de niveau "+this.niveau+" je possède "+this.vieMax+" de vitalite, " + this.force+" de force, "+
+				this.agilite+ " d'agilité et "+ this.intelligence + " d'inteligence !";
+	}	
+	
 	/////////////////////////
-	//SETTER/
+	//////////SETTER/////////
 	/////////////////////////
 	
 	
@@ -72,8 +77,7 @@ public abstract class Personnage
 		return vie;
 	}
 	
-	public String toString() {
-		return "je suis le "+this.getClass().getSimpleName()+" "+ this.nom +" de niveau "+this.niveau+" je posséde "+this.vieMax+" de vitalite, " + this.force+" de force "+
-				this.agilite+ " d'agilite et "+ this.intelligence + " d'inteligence";
-	}	
+	public int getAgilite() {
+		return agilite;
+	}
 }

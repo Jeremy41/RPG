@@ -1,5 +1,7 @@
 package com.sdz.perso;
 
+
+
 public class Mage extends Personnage
 {
 	public Mage(String pNom) 
